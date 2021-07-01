@@ -10,9 +10,7 @@ export default function App() {
     <Provider store={store}>
       <PersistGate 
         persistor={persistor}>
-          <React.Fragment>
             <NavigationProvider />
-          </React.Fragment>
         </PersistGate>
     </Provider>
   );

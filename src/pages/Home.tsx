@@ -3,11 +3,11 @@ import React, { useCallback, useEffect } from 'react';
 import  { Text,View,useWindowDimensions } from 'react-native';
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 import  AllRoute  from './AllRoute';
+import  CompleteRoute  from './CompleteRoute';
+import  UncompleteRoute  from './UncompleteRoute';
 
   
-  const CompleteRoute = () => (
-    <View style={{ flex: 1, backgroundColor: 'white' }} />
-  );
+  
 export const Home: React.FC = () => {
     
     const layout = useWindowDimensions();
@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
     const renderScene = SceneMap({
       all: AllRoute,
       complete: CompleteRoute,
-      uncomplete: CompleteRoute,
+      uncomplete: UncompleteRoute,
       favorite: CompleteRoute,
     });
     const renderTabBar : React.FC = (props) => {

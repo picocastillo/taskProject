@@ -1,26 +1,31 @@
-import React, { useCallback, useEffect } from 'react';
-import BouncyCheckbox from "react-native-bouncy-checkbox";
+import React, { useCallback, useState } from 'react';
+import { Text } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 
-import { My } from '../utilStyles';
+import { My,Row } from '../utilStyles';
 
 export type Props = {
     title: string;
     isCheck: boolean;
-    onPress: () => void
+    id: string;
+    changeState: () => void;
   };
 
-const CheckBoxLine: React.FC<Props> = ({title,isCheck,onPress}) => {
+const CheckBoxLine: React.FC<Props> = ({title,isCheck,changeState,id}) => {
+    const [toggleCheckBox, setToggleCheckBox] = useState(isCheck)
+    const Checkbox = (value: boolean) => {
+        setToggleCheckBox(value);
+        changeState(id);
+      }
     return (
         <My>
-            <BouncyCheckbox
-                size={25}
-                fillColor="red"
-                unfillColor="#FFFFFF"
-                text={title}
-                isChecked={isCheck}
-                iconStyle={{ borderColor: "red" }}
-                onPress={onPress}
-            />
+            <Row>
+                <CheckBox
+                    value={toggleCheckBox}
+                    onValueChange={Checkbox}
+                />
+                <Text>{title}</Text>
+            </Row>
         </My>
     )
 }

@@ -7,12 +7,7 @@ export const setNewTask = (task: ITask) => ({
 });
 
 
-export const setTaskComplete = (index) => ({
-  type: type.COMPLETE,
-  index
-});
-
-export const setTaskUnComplete = (index) => ({
-  type: type.UNCOMPLETE,
-  index
+export const changeState = (id: string) => ({
+  type: type.CHANGE_STATE,
+  id
 });

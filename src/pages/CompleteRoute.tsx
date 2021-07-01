@@ -6,29 +6,27 @@ import { useNavigation } from '@react-navigation/native';
 import { connect } from 'react-redux';
 import {changeState} from '../actions/TaskActions'
 import { ITask } from '../Interfaces';
+import { useFocusEffect } from '@react-navigation/native';
 
-
-
- const AllRoute: React.FC = ({tasks,changeState}) => {
+ const CompleteRoute: React.FC = ({tasks,changeState}) => {
   const navigation = useNavigation();
   const [data,setData] = React.useState([])
-  useEffect(() => {
-    async function fetch(){
-      await navigation.addListener(
-        'focus',
-         async () => { 
-          await setData([])
-        },
-        );
-    }
-    fetch();
-    setData(tasks)
-  },[data])
+
+  useFocusEffect(
+    React.useCallback(() => {
+      let isActive = true;
+      console.log("object")
+  
+      return () => {
+        isActive = false;
+      };
+    }, [])
+  );
 
     return (
         <Container>
-          <ListChekBoxes changeState={changeState} data={data} />
-          <MyButton onPress={() => navigation.navigate('AddTask')} title="Add task"/>
+         
+          <ListChekBoxes changeState={changeState} data={tasks} />
         </Container>
     )
 }
@@ -36,13 +34,13 @@ import { ITask } from '../Interfaces';
 
 
 const mapStateToProps = ({tasks}) => {
-  return {tasks};
+  const completed = tasks.length>0 ? tasks.filter((e: ITask) => e.complete===true) : [];
+  return {tasks: completed};
 }
-
 export default connect(
 mapStateToProps,
 {
   changeState
 }
-)(AllRoute)
+)(CompleteRoute)
 

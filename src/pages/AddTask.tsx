@@ -26,7 +26,7 @@ type Props = {
     const submit = () => {
 
       props.setNewTask({
-        id: props.tasksLength+1,
+        id: (props.tasksLength+1).toString(),
         title: title,
         complete: false
       })

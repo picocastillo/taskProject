@@ -6,24 +6,25 @@ import  { SafeAreaView,FlatList } from 'react-native';
 import { My } from '../utilStyles';
 import { ITask } from '../Interfaces';
 
-interface Props {
-    data: ITask[],
-    onPressCheckbox: (index: number) => void
+type Props  = {
+    data: ITask[];
+    changeState: (id: string) => void;
   }
 
-const ListCheckBoxes: React.FC<Props> = ({data,onPressCheckbox}) => {
-
+const ListCheckBoxes: React.FC<Props> = ({data,changeState}) => {
+ 
     return (
         <My>
            <SafeAreaView >
                     <FlatList
-                    data={data}
-                    renderItem={
-                      ({ item,index }) => (
-                        <CheckBoxLine isCheck={item.complete} onPress={() => {onPressCheckbox(index)}} title={item.title} />
-                      )
-                    }
-                    keyExtractor={item => item.id}
+                      data={data}
+                      extraData={data}
+                      renderItem={
+                        ({ item }) => (
+                          <CheckBoxLine id={item.id}  isCheck={item.complete} changeState={changeState} title={item.title} />
+                        )
+                      }
+                      keyExtractor={item => item.id}
                     />
             </SafeAreaView>
         </My>
