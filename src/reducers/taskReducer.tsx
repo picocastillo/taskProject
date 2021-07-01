@@ -17,8 +17,6 @@ export default (state=INITIAL_STATE, action) => {
     case CHANGE_STATE:
       let all = state.tasks;
       const index = all.findIndex((x: ITask) => x.id==action.id);
-      // console.log("tas",all)
-      // console.log("idx",action.id)
       all[index].complete =  !all[index].complete ;
       return {
         tasks: all,

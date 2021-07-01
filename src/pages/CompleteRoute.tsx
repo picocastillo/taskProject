@@ -10,19 +10,6 @@ import { useFocusEffect } from '@react-navigation/native';
 
  const CompleteRoute: React.FC = ({tasks,changeState}) => {
   const navigation = useNavigation();
-  const [data,setData] = React.useState([])
-
-  useFocusEffect(
-    React.useCallback(() => {
-      let isActive = true;
-      console.log("object")
-  
-      return () => {
-        isActive = false;
-      };
-    }, [])
-  );
-
     return (
         <Container>
          

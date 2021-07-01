@@ -25,7 +25,7 @@ export const RightTime = styled.View`
 
 export const Col2 = styled.View`
     display: flex;
-    width: 180;
+    width: 180px;
 `;
 
 

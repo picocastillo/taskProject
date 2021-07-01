@@ -13,7 +13,6 @@ import { ITask } from '../Interfaces';
   const navigation = useNavigation();
   const [data,setData] = React.useState([])
   useEffect(() => {
-    console.log(tasks)
     async function fetch(){
       await navigation.addListener(
         'focus',
@@ -28,7 +27,7 @@ import { ITask } from '../Interfaces';
 
     return (
         <Container>
-          <ListChekBoxes changeState={changeState} data={data} />
+          <ListChekBoxes changeState={changeState} data={tasks} />
             <MyButton onPress={() => navigation.navigate('AddTask')} title="Create a Task"/>
         </Container>
     )

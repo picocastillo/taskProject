@@ -10,25 +10,12 @@ import { useFocusEffect } from '@react-navigation/native';
 
  const UncompleteRoute: React.FC = ({tasks,changeState}) => {
   const navigation = useNavigation();
-  const [data,setData] = React.useState([])
-
-  useFocusEffect(
-    React.useCallback(() => {
-      let isActive = true;
-      console.log("object")
-  
-      return () => {
-        isActive = false;
-      };
-    }, [])
-  );
-
-    return (
-        <Container>
-         
-          <ListChekBoxes changeState={changeState} data={tasks} />
-        </Container>
-    )
+  return (
+      <Container>
+        
+        <ListChekBoxes changeState={changeState} data={tasks} />
+      </Container>
+  )
 }
 
 

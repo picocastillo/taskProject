@@ -18,11 +18,10 @@ const CheckBoxLine: React.FC<Props> = ({title,isCheck,changeState,id}) => {
         setToggleCheckBox(value);
         changeState(id);
       }
-      console.log(`check_${(id%4)+1}`)
     return (
             <Row>
                 <CheckBox
-                    value={toggleCheckBox}
+                    value={isCheck}
                     onValueChange={Checkbox}
                     tintColor="#cc25aa"
                     onCheckColor="#12hdvc2"
