@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { CheckBox } from 'react-native-elements'
 import { Row,TextCheckbox } from '../utilStyles';
 import { check_4,check_1,check_2,check_3 } from '../constants';
+import { useEffect } from 'react';
 
 export type Props = {
     title: string;
@@ -14,9 +15,12 @@ export type Props = {
 const CheckBoxLine: React.FC<Props> = ({title,isCheck,changeState,id}) => {
     const [toggleCheckBox, setToggleCheckBox] = useState(isCheck)
     const onChange = (value: boolean) => {
-        setToggleCheckBox(value);
+        setToggleCheckBox(!toggleCheckBox);
         changeState(id);
       }
+      useEffect(() => {
+        setToggleCheckBox(isCheck)
+      },[isCheck])
     return (
             <Row>
                 {/* <CheckBox
@@ -29,12 +33,15 @@ const CheckBoxLine: React.FC<Props> = ({title,isCheck,changeState,id}) => {
                 />
                 <TextCheckbox>{title}</TextCheckbox> */}
                 <CheckBox
-                    center
                     title={title}
-                    checkedIcon='dot-circle-o'
-                    uncheckedIcon='circle-o'
-                    checked={isCheck}
+                    checked={toggleCheckBox}
+                    iconType='material'
+                    checkedIcon='check-box'
+                    uncheckedIcon='check-box-outline-blank'
+                    containerStyle={{backgroundColor: 'white',borderColor: 'white'}}
                     onPress={onChange}
+                    checkedColor={(id%4)+1==1 ? check_1 : ((id%4)+1==2 ? check_2: ((id%4)+1==3 ? check_3 : check_4))}
+                    uncheckedColor={(id%4)+1==1 ? check_1 : ((id%4)+1==2 ? check_2: ((id%4)+1==3 ? check_3 : check_4))}
                   />
             </Row>
     )
