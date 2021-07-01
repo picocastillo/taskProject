@@ -1,6 +1,5 @@
 import {ADD,CHANGE_STATE} from '../actions/types/TaskTypes'
 import { ITask } from '../Interfaces';
-import CheckBoxLine from '../shares/CkeckBoxLine';
 
 const INITIAL_STATE= {
   tasks: []

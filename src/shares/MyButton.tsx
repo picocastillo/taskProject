@@ -1,7 +1,7 @@
 import React from 'react';
 import { Feather,Entypo,EvilIcons } from '@expo/vector-icons'; 
-import { Row,Mx,TitleButton } from '../utilStyles';
-import { StyleSheet, View, TouchableOpacity, Text, Alert } from 'react-native';
+import { TitleButton } from '../utilStyles';
+import { TouchableOpacity } from 'react-native';
 import { my_green } from '../constants';
 
 type Props = {

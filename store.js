@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware, compose} from 'redux';
+import {createStore} from 'redux';
 import reducer from './src/reducers/taskReducer';
 import { persistStore, persistReducer } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -19,3 +19,11 @@ const store = createStore(persistedReducer)
 
 let persistor = persistStore(store)
 export { store,persistor }
+
+// const set = async () => {
+//  console.log(await  AsyncStorage.getItem('asd'))
+// }
+
+
+
+// set()

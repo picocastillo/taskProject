@@ -1,8 +1,7 @@
-import React, { useCallback, useState } from 'react';
-import { Text } from 'react-native';
+import React, { useState } from 'react';
 import CheckBox from '@react-native-community/checkbox';
 
-import { My,Row,TextCheckbox } from '../utilStyles';
+import { Row,TextCheckbox } from '../utilStyles';
 import { check_4,check_1,check_2,check_3 } from '../constants';
 
 export type Props = {

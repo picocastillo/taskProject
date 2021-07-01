@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationProvider } from './navigate';
-import {store,persistor} from './store';
+import  {persistor,store}  from './store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
 
@@ -8,10 +8,11 @@ import { PersistGate } from 'redux-persist/integration/react'
 export default function App() {
   return (
     <Provider store={store}>
-      <PersistGate 
-        persistor={persistor}>
+      <PersistGate  persistor={persistor} loading={null}>
+          <React.Fragment>
             <NavigationProvider />
-        </PersistGate>
+          </React.Fragment>
+      </PersistGate>
     </Provider>
   );
 }

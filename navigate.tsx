@@ -7,7 +7,6 @@ import { RightIcons } from './src/shares/RightIcons';
 import { View } from 'react-native';
 import { my_gray } from './src/constants';
 import { Entypo } from '@expo/vector-icons'; 
-import { useNavigation } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 

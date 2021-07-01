@@ -1,18 +1,21 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 import { Container } from '../utilStyles';
 import ListChekBoxes from '../shares/ListCheckBoxes';
-import MyButton from '../shares/MyButton';
 import { useNavigation } from '@react-navigation/native';
 import { connect } from 'react-redux';
 import {changeState} from '../actions/TaskActions'
 import { ITask } from '../Interfaces';
-import { useFocusEffect } from '@react-navigation/native';
 
- const CompleteRoute: React.FC = ({tasks,changeState}) => {
+
+type Props = {
+  tasks: ITask[];
+  changeState: () => void;
+}
+
+ const CompleteRoute: React.FC<Props> = ({tasks,changeState}) => {
   const navigation = useNavigation();
     return (
         <Container>
-         
           <ListChekBoxes changeState={changeState} data={tasks} />
         </Container>
     )
