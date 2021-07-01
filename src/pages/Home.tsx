@@ -2,11 +2,11 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect } from 'react';
 import  { Text,View,useWindowDimensions } from 'react-native';
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
+import { my_black, my_gray } from '../constants';
 import  AllRoute  from './AllRoute';
+import  {LabelTab,TitleTab}  from '../utilStyles';
 import  CompleteRoute  from './CompleteRoute';
 import  UncompleteRoute  from './UncompleteRoute';
-
-  
   
 export const Home: React.FC = () => {
     
@@ -26,13 +26,23 @@ export const Home: React.FC = () => {
       uncomplete: UncompleteRoute,
       favorite: CompleteRoute,
     });
+
+    const renderLabelTabs = ({ route, focused, color })=> {
+      if (focused)
+        return <TitleTab>{route.title}</TitleTab>
+      else
+        return <LabelTab>{route.title}</LabelTab>  
+    }
+
     const renderTabBar : React.FC = (props) => {
         return (
             <TabBar
-                style={{backgroundColor: 'white', height:55}}
-                labelStyle={{color: 'black', fontSize: 12, fontWeight: 'bold', backgroundColor: 'black'}}
+                style={{backgroundColor: 'white', height:55,marginTop: 20, borderBottomWidth: 2, borderColor: my_gray}}
+                labelStyle={{ fontSize: 12, fontWeight: 'bold', backgroundColor: 'black',color: 'red'}}
                 {...props}
-                indicatorStyle={{backgroundColor: 'black', width: 20, marginLeft: 45}}
+                activeColor={'#252526'}
+                indicatorStyle={{backgroundColor: '#252526', width: 20, marginLeft: 45}}
+                renderLabel={renderLabelTabs}
             />
         );
       }

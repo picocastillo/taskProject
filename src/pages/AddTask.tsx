@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
-import  { TextInput,Text } from 'react-native';
-import { Column,Title,MyInput,Row,Container } from '../utilStyles';
+import  { TextInput,Text,View } from 'react-native';
+import { Column,Title,MyInput,Row,Container,Col2,ContainerTime,RightTime,ColumnForm } from '../utilStyles';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Feather } from '@expo/vector-icons'; 
 import MyButton from '../shares/MyButton';
@@ -36,10 +36,11 @@ type Props = {
     }
 
     return (
-      <Column>
+      <View style={{backgroundColor: 'white', flex: 1,justifyContent: 'center'}} >
+        <Column>
           <Title>Title</Title>
           <MyInput>
-            <TextInput value={title}  onChangeText={onChangeTitle} />
+            <TextInput value={title} style={{color: '#cdcece',paddingTop: 10, paddingLeft: 15}}  onChangeText={onChangeTitle} />
           </MyInput>
           <Title>Deadline</Title>
           <DropDownPicker
@@ -47,27 +48,42 @@ type Props = {
             value={value}
             items={items}
             placeholder="2021-02-08"
+            style={{borderColor: '#cdcece'}}
+            placeholderStyle={{color: '#cdcece'}}
             setOpen={setOpen}
+            disabled
             setValue={setValue}
             setItems={setItems}
             />
             <Container>
               <Row>
-                <Column>
+                <ColumnForm>
                   <Title>Start Time</Title>
-                  <Row>
-                      <Text>11:00 pm</Text>
-                      <Feather name="clock" size={24} color="black" />
-                  </Row>
-                </Column>
-                <Column>
+                  <Col2>
+                    <MyInput>
+                      <ContainerTime>
+                        <Text>11:00 pm</Text>
+                        <RightTime>
+                          <Feather name="clock" size={18} color="black" />
+                        </RightTime>
+                      </ContainerTime>
+                    </MyInput>
+                  </Col2>
+                </ColumnForm>
+                <ColumnForm>
                   <Title>End Time</Title>
-                  <Row>
-                    <Text>11:14 pm</Text>
-                    <Feather name="clock" size={24} color="black" />
-                  </Row>
+                  <Col2>
+                    <MyInput>
+                      <ContainerTime>
+                        <Text>11:14 pm</Text>
+                        <RightTime>
+                          <Feather name="clock" size={18} color="black" />
+                        </RightTime>
+                      </ContainerTime>
+                    </MyInput>
+                  </Col2>
 
-                </Column>
+                </ColumnForm>
               </Row>
 
               <Title>Remind</Title>
@@ -75,7 +91,10 @@ type Props = {
                 open={open}
                 placeholder="10 minutes earlier"
                 value={value}
+                disabled
                 items={items}
+                style={{borderColor: '#cdcece'}}
+                placeholderStyle={{color: '#cdcece'}}
                 setOpen={setOpen}
                 setValue={setValue}
                 setItems={setItems}
@@ -84,7 +103,10 @@ type Props = {
               <DropDownPicker
                 open={open}
                 value={value}
+                disabled
                 items={items}
+                style={{borderColor: '#cdcece'}}
+                placeholderStyle={{color: '#cdcece'}}
                 placeholder="Weekly"
                 setOpen={setOpen}
                 setValue={setValue}
@@ -95,6 +117,7 @@ type Props = {
 
             </Container>
       </Column>
+      </View>
     );
 };
 

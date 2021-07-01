@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { Container } from '../utilStyles';
+import { Container,ContainerButton } from '../utilStyles';
 import ListChekBoxes from '../shares/ListCheckBoxes';
 import MyButton from '../shares/MyButton';
 import { useNavigation } from '@react-navigation/native';
@@ -13,6 +13,7 @@ import { ITask } from '../Interfaces';
   const navigation = useNavigation();
   const [data,setData] = React.useState([])
   useEffect(() => {
+    console.log(tasks)
     async function fetch(){
       await navigation.addListener(
         'focus',
@@ -28,7 +29,7 @@ import { ITask } from '../Interfaces';
     return (
         <Container>
           <ListChekBoxes changeState={changeState} data={data} />
-          <MyButton onPress={() => navigation.navigate('AddTask')} title="Add task"/>
+            <MyButton onPress={() => navigation.navigate('AddTask')} title="Create a Task"/>
         </Container>
     )
 }

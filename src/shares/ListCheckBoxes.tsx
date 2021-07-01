@@ -15,7 +15,7 @@ const ListCheckBoxes: React.FC<Props> = ({data,changeState}) => {
  
     return (
         <My>
-           <SafeAreaView >
+           <SafeAreaView style={{maxHeight: 300}} >
                     <FlatList
                       data={data}
                       extraData={data}
