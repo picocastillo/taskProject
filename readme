@@ -1,0 +1,11 @@
+To run de project, excute yarn install, after that yarn start
+Installed:
+* styled components
+* reactnavigation
+*redux
+*redux persist
+*native elements
+* react-native-tab-view
+*react-native-bouncy-checkbox
+*yarn add @react-native-community/datetimepicker
+*react-redux
