@@ -6,11 +6,14 @@ import { useNavigation } from '@react-navigation/native';
 import { connect } from 'react-redux';
 import {changeState} from '../actions/TaskActions'
 import { ITask } from '../Interfaces';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Props = {
   tasks: ITask[];
   changeState: () => void;
 }
+
+
 
  const AllRoute: React.FC<Props> = ({tasks,changeState}) => {
   const navigation = useNavigation();
@@ -26,6 +29,8 @@ type Props = {
     }
     fetch();
     setData(tasks)
+
+
   },[data])
 
     return (
@@ -39,7 +44,7 @@ type Props = {
 
 
 const mapStateToProps = ({tasks}) => {
-  return {tasks};
+  return {tasks: tasks.tasks};
 }
 
 export default connect(

@@ -24,7 +24,6 @@ type Props = {
     const navigation = useNavigation();
 
     const submit = () => {
-
       props.setNewTask({
         id: (props.tasksLength+1).toString(),
         title: title,
@@ -122,7 +121,7 @@ type Props = {
 };
 
 const mapStateToProps = ({tasks}) => {
-  return {tasksLength: tasks.length};
+  return {tasksLength: tasks.tasks.length};
 }
 
 export default connect(

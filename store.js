@@ -1,5 +1,5 @@
 import {createStore} from 'redux';
-import reducer from './src/reducers/taskReducer';
+import reducer from './src/reducers';
 import { persistStore, persistReducer } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -27,3 +27,12 @@ export { store,persistor }
 
 
 // set()
+
+// AsyncStorage.getAllKeys((err, keys) => {
+//   AsyncStorage.multiGet(keys, (error, stores) => {
+//     stores.map((result, i, store) => {
+//       console.log('log async: ',{ [store[i][0]]: store[i][1] });
+//       return true;
+//     });
+//   });
+// });

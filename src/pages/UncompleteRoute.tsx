@@ -20,7 +20,7 @@ type Props = {
 
 
 const mapStateToProps = ({tasks}) => {
-  const completed = tasks.length>0 ? tasks.filter((e: ITask) => e.complete===false) : [];
+  const completed = tasks.tasks.length>0 ? tasks.tasks.filter((e: ITask) => e.complete===false) : [];
   return {tasks: completed};
 }
 export default connect(
