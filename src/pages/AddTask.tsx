@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import  { TextInput,Text,View } from 'react-native';
 import { Column,Title,MyInput,Row,Container,Col2,ContainerTime,RightTime,ColumnForm } from '../utilStyles';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -13,7 +13,7 @@ type Props = {
   setNewTask: (task: ITask ) => void
 }
 
- const AddTask: React.FC = (props) => {
+ const AddTask: React.FC<Props> = (props) => {
     const [title,onChangeTitle] = React.useState('Design teem meeting')
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);

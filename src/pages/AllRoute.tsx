@@ -6,7 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import { connect } from 'react-redux';
 import {changeState} from '../actions/TaskActions'
 import { ITask } from '../Interfaces';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Props = {
   tasks: ITask[];

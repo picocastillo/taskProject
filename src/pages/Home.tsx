@@ -1,8 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useCallback, useEffect } from 'react';
-import  { Text,View,useWindowDimensions } from 'react-native';
+import React from 'react';
+import  { useWindowDimensions } from 'react-native';
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
-import { my_black, my_gray } from '../constants';
+import { my_gray } from '../constants';
 import  AllRoute  from './AllRoute';
 import  {LabelTab,TitleTab}  from '../utilStyles';
 import  CompleteRoute  from './CompleteRoute';

@@ -1,8 +1,6 @@
-import React, { useCallback, useEffect } from 'react';
-import BouncyCheckbox from "react-native-bouncy-checkbox";
+import React from 'react';
 import CheckBoxLine from '../shares/CkeckBoxLine';
 import  { SafeAreaView,FlatList } from 'react-native';
-
 import { My } from '../utilStyles';
 import { ITask } from '../Interfaces';
 
@@ -12,7 +10,6 @@ type Props  = {
   }
 
 const ListCheckBoxes: React.FC<Props> = ({data,changeState}) => {
- 
     return (
         <My>
            <SafeAreaView style={{maxHeight: 300}} >
