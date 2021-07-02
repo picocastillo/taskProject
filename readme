@@ -1,6 +1,6 @@
 To run de project, excute yarn install or npm install, after that yarn start o npm start.
 To simulate App in ios, play "i" on your keyboard
-To simulate Android in ios, play "a" on your keyboard
+To simulate Android, play "a" on your keyboard
 To simulate in device scan the QR code
 
 Installed:
