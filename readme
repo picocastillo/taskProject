@@ -1,4 +1,8 @@
-To run de project, excute yarn install, after that yarn start
+To run de project, excute yarn install or npm install, after that yarn start o npm start.
+To simulate App in ios, play "i" on your keyboard
+To simulate Android in ios, play "a" on your keyboard
+To simulate in device scan the QR code
+
 Installed:
 * styled components
 * reactnavigation
@@ -9,5 +13,5 @@ Installed:
 *react-native-bouncy-checkbox
 *yarn add @react-native-community/datetimepicker
 *react-redux
-*@react-native-community/checkbox
+*@react-native-elements
 
